@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mongo CRUD</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <h1>Mongo Crud Application</h1>
+    {{message}}
+    {{#if edit_id}}
+<h1>Edit</h1>
+ <form action="/update/{{edit_id}}" method="POST">
+    <label for="title">Book Title:</label>
+    <input type="text" name="title" id="title" value="{{edit_book.title}}"  />
+
+    <label for="author">Author:</label>
+    <input type="text" name="author" id="author" value="{{edit_book.author}}" />
+
+    <button type="    ">update</button>
+</form>
+{{else}}
+
+
+    <h1>Create</h1>
+   
+  <form action="/store" method="POST">
+    <label for="title">Book Title:</label>
+    <input type="text" name="title" id="title"  />
+
+    <label for="author">Author:</label>
+    <input type="text" name="author" id="author"  />
+
+    <button type="submit">Add Book</button>
+</form>
+{{/if}}
+ <table>
+        <tr>
+            <th>Roll Num</th>
+            <th>Books Title</th>
+            <th>Books Author Name</th>
+            <th>Edit and detele </th>
+        </tr>
+       
+ {{#each books}}
+        <tr>
+           <td>{{inc @index 1}}</td>
+            <td>
+                {{this.title}}
+            </td>
+            <td>
+                {{this.author}}
+            </td>
+            <td>
+ <a href="/?edit_id={{this._id}}" class="editbtn">Edit</a> <a href="/?delete_id={{this._id}}" onclick="return confirm('are you sure want to delete ?')" class="dltbtn">delete</a>
+            </td>
+        </tr>
+       {{/each}}
+      
+   
+     </table>
+      
+</body>
+</html>

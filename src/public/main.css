@@ -1,0 +1,47 @@
+label{
+    color: white;
+}
+*{
+    color: white;
+}
+body{
+    background-color: rgb(24, 32, 40);
+    overflow-x:hidden;
+  
+}
+h1{
+    color: red;
+}
+button[type=submit]{
+    color: black;
+}
+table{
+    width: 90%;
+    margin-left: 5%;
+}
+table,td,th{
+    border: 2px solid gold;
+    border-collapse: collapse;
+    padding: 10px;
+    color: white;
+}
+.editbtn,.dltbtn,button[type=submit]{
+    background-color: green;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+.dltbtn{
+    background-color: red;
+}
+#title,#author{
+    padding: 20px;
+    width: 100%;
+    background-color: transparent;
+}
+button[type=submit]{
+    margin: 10px 0;
+border: none;
+   
+}
